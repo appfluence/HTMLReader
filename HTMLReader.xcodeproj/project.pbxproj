@@ -1451,6 +1451,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.nolanw.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1483,6 +1484,7 @@
 				INFOPLIST_FILE = Framework/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.nolanw.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1823,6 +1825,7 @@
 				1C319BC91C618863000DAA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C6C1F631A179BF600236076 /* Build configuration list for PBXNativeTarget "HTMLReader iOS" */ = {
 			isa = XCConfigurationList;
