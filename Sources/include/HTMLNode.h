@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (HTMLEnumeratorOf(HTMLNode *) *)treeEnumerator;
 
-/// Emits in tree order the node in the subree rooted at the node, except children are enumerated back to front.
+/// Emits in tree order the nodes in the subtree rooted at the node, except that children are enumerated back to front.
 - (HTMLEnumeratorOf(HTMLNode *) *)reversedTreeEnumerator;
 
 /**
@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
     Returns the contents of each child text node. Only direct children are considered; no further descendants are included.
  */
-@property (readonly, copy, nonatomic) NSArray *textComponents;
+@property (readonly, copy, nonatomic) HTMLArrayOf(NSString *) *textComponents;
 
 /**
     Convenience method for either adding a string to an existing text node or creating a new text node.

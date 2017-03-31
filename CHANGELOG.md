@@ -1,6 +1,40 @@
 # Change Log
 
-## [Unreleased][]
+## [Unreleased]
+
+## [2.0.4][]
+
+* Fix a compiler warning new to Xcode 8.3.
+
+## [2.0.3][]
+
+* Move tests folder to support Swift 3's Package Manager.
+
+## [2.0.2][]
+
+* Fix retain cycle on documents created with `-[HTMLDocument initWithData:contentTypeHeader:]`.
+
+## [2.0.1][]
+
+* Fix buffer overflow when parsing named entities.
+    * This would happen when attempting to parse the first semicolonless named entity `AElig`.
+
+## [2.0][]
+
+* Fix `HTMLElement`'s subscripting abilities not getting bridged into Swift (issue #59 revisited).
+    * This is a breaking change because Swift code used to see `HTMLElement.objectForKeyedSubscript(_:)` and now sees `HTMLElement.subscript(_:)`.
+* Update project and playground for Xcode 8 and Swift 3.
+
+## [1.0.1][]
+
+* Pass updated html5lib-tests.
+* Update return type of `-[HTMLNode textComponents]` to an array of `NSString`.
+* Add a nonempty `Package.swift` as now required by Swift Package Manager.
+
+# [1.0][] – 2016-07-02
+
+* Rearrange source folder tree to match Swift Package Manager convention.
+* Update html5lib-tests submodule to fix cloning.
 
 ## [0.9.6][] – 2016-04-02
 
@@ -26,7 +60,7 @@
 
 ## [0.9.2][] – 2015-10-25
 
-* Make HTMLTextNode publicly accessible so that instances are usable when enumerating a node's descendants.
+* Make `HTMLTextNode` publicly accessible so that instances are usable when enumerating a node's descendants.
 * Add `-[HTMLNode textComponents]` for convenient access to a node's direct text contents.
 
 ## [0.9.1][] – 2015-10-23
@@ -79,9 +113,16 @@
 * A new document initializer, `-[HTMLDocument initWithData:contentTypeHeader:]`, detects the character encoding as a browser would. This is the ideal initializer for HTML documents fetched over the network, or any other time when the character encoding isn't previously known. Note that HTML does not blindly use the encoding specified by the HTTP `Content-Type` header, so this initializer is still superior to parsing the `Content-Type` yourself.
 
 
-[Unreleased]: https://github.com/nolanw/HTMLReader/compare/v0.9.6...HEAD
-[0.9.5]: https://github.com/nolanw/HTMLReader/compare/v0.9.5...v0.9.6
-[0.9.4]: https://github.com/nolanw/HTMLReader/compare/v0.9.4...v0.9.5
+[Unreleased]: https://github.com/nolanw/HTMLReader/compare/v2.0.4...HEAD
+[2.0.4]: https://github.com/nolanw/HTMLReader/compare/v2.0.3...v2.0.4
+[2.0.3]: https://github.com/nolanw/HTMLReader/compare/v2.0.2...v2.0.3
+[2.0.2]: https://github.com/nolanw/HTMLReader/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/nolanw/HTMLReader/compare/v2.0...v2.0.1
+[2.0]: https://github.com/nolanw/HTMLReader/compare/v1.0.1...v2.0
+[1.0.1]: https://github.com/nolanw/HTMLReader/compare/v1.0...1.0.1
+[1.0]: https://github.com/nolanw/HTMLReader/compare/v0.9.6...1.0
+[0.9.6]: https://github.com/nolanw/HTMLReader/compare/v0.9.5...v0.9.6
+[0.9.5]: https://github.com/nolanw/HTMLReader/compare/v0.9.4...v0.9.5
 [0.9.4]: https://github.com/nolanw/HTMLReader/compare/v0.9.3...v0.9.4
 [0.9.3]: https://github.com/nolanw/HTMLReader/compare/v0.9.2...v0.9.3
 [0.9.2]: https://github.com/nolanw/HTMLReader/compare/v0.9.1...v0.9.2
